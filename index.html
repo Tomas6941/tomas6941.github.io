@@ -302,7 +302,7 @@
             transform: translateY(20px);
         }
 
-        /* formulario turno (demo) */
+        /* formulario turno */
         .turno-section {
             background: #e9f1ec;
             border-radius: 3.5rem 3.5rem 0 0;
@@ -384,6 +384,26 @@
             transform: scale(1.02);
         }
 
+        /* Mensaje de notificación */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2f5b54;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            font-weight: 500;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
         footer {
             background: #d5e1d8;
             padding: 3rem 2rem;
@@ -427,7 +447,7 @@
             <a href="#">Inicio</a>
             <a href="#">Servicios</a>
             <a href="#">Espacio</a>
-            <a href="#">Turnos</a>
+            <a href="#turno">Turnos</a>
             <a href="#">Contacto</a>
         </div>
     </header>
@@ -455,7 +475,7 @@
             <div class="service-grid">
                 <div class="service-card fade-up">
                     <div class="card-img">
-                        <img src="https://bioreset.com.ar/wp-content/uploads/2021/12/spa-inicio.jpg" alt="masaje descontracturante">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="masaje descontracturante">
                     </div>
                     <div class="card-content">
                         <h3>masaje bioreset</h3>
@@ -465,7 +485,7 @@
                 </div>
                 <div class="service-card fade-up delay-1">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ritual de hidratación">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ritual de hidratación">
                     </div>
                     <div class="card-content">
                         <h3>ritual de arcilla</h3>
@@ -475,7 +495,7 @@
                 </div>
                 <div class="service-card fade-up delay-2">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sauna y vapor">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sauna y vapor">
                     </div>
                     <div class="card-content">
                         <h3>circuito termal</h3>
@@ -490,65 +510,74 @@
         <div class="container">
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="toallas blancas y velas"></div>
-                <div class="gallery-item"><img src="https://i0.wp.com/umarispa.com/wp-content/uploads/2023/05/primer-plano-terapeutas-colocando-piedras-calientes-espalda-hombre-terapia-lastone-spa-scaled.jpg?fit=2560%2C1707&ssl=1" alt="piedras calientes y masaje"></div>
-                <div class="gallery-item"><img src="https://balispirit.es/wp-content/uploads/2021/11/unnamed-1-300x169.jpg" alt="sala de masajes con aceites"></div>
-                <div class="gallery-item"><img src="https://ms.webpages.winpax.com.ar/images/eaea5587-7e11-4314-9d7d-416e02da8a1e.jpeg" alt="infusion y bata"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="piedras calientes y masaje"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sala de masajes con aceites"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="infusion y bata"></div>
             </div>
         </div>
 
-        <!-- formulario de turno (solo demo visual) -->
+        <!-- formulario de turno funcional -->
         <section class="turno-section" id="turno">
             <div class="turno-container fade-up">
                 <h2 style="font-family: 'Playfair Display'; font-size: 2.4rem; font-weight:600; color:#29554a;">momento para vos</h2>
-                <p style="color:#42635c; margin-bottom: 2rem; font-size:1.2rem;">simulá tu reserva — demo visual, sin envío real.</p>
+                <p style="color:#42635c; margin-bottom: 2rem; font-size:1.2rem;">completá tus datos y te contactaremos a la brevedad.</p>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label><i class="far fa-user" style="margin-right: 6px;"></i>Nombre completo</label>
-                        <input type="text" placeholder="p. ej. Martina Gallardo" value="Lucía Méndez">
+                <form id="turnoForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label><i class="far fa-user" style="margin-right: 6px;"></i>Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="ej. Martina Gallardo" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="far fa-envelope"></i> Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tumail@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone-alt"></i> Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="11 2345-6789" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-week"></i> Servicio *</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Seleccioná un servicio</option>
+                                <option value="Masaje bioreset">Masaje bioreset</option>
+                                <option value="Ritual de arcilla">Ritual de arcilla</option>
+                                <option value="Circuito termal">Circuito termal</option>
+                                <option value="Consulta de nutrición">Consulta de nutrición</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="far fa-calendar-alt"></i> Fecha *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="far fa-clock"></i> Horario *</label>
+                            <select id="horario" name="horario" required>
+                                <option value="">Seleccioná un horario</option>
+                                <option value="10:00">10:00 hs</option>
+                                <option value="11:30">11:30 hs</option>
+                                <option value="16:00">16:00 hs</option>
+                                <option value="18:00">18:00 hs</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label><i class="far fa-comment-dots"></i> Notas o molestias (opcional)</label>
+                            <textarea id="notas" name="notas" rows="3" placeholder="contanos si tenés alguna zona sensible..."></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label><i class="far fa-envelope"></i> Email</label>
-                        <input type="email" placeholder="tumail@ejemplo.com" value="lucia.m@demo.com">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-phone-alt"></i> Teléfono</label>
-                        <input type="tel" placeholder="11 2345-6789" value="11 3987 6254">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-calendar-week"></i> Servicio</label>
-                        <select>
-                            <option>Masaje bioreset</option>
-                            <option selected>Ritual de arcilla</option>
-                            <option>Circuito termal</option>
-                            <option>Consulta de nutrición</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="far fa-calendar-alt"></i> Fecha</label>
-                        <input type="date" value="2025-06-15">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="far fa-clock"></i> Horario</label>
-                        <select>
-                            <option>10:00 hs</option>
-                            <option>11:30 hs</option>
-                            <option selected>16:00 hs</option>
-                            <option>18:00 hs</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <label><i class="far fa-comment-dots"></i> Notas o molestias (opcional)</label>
-                        <textarea rows="3" placeholder="contanos si tenés alguna zona sensible...">hombros contracturados</textarea>
-                    </div>
-                </div>
 
-                <div style="display: flex; justify-content: flex-end;">
-                    <button class="btn-submit" onclick="event.preventDefault()"><i class="fas fa-calendar-check"></i> Confirmar turno (demo)</button>
-                </div>
-                <p style="margin-top: 2rem; font-size:0.9rem; color:#548277;"><i class="fas fa-info-circle"></i> Este formulario es solo visual — no envía datos reales.</p>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button type="submit" class="btn-submit"><i class="fas fa-calendar-check"></i> Solicitar turno</button>
+                    </div>
+                </form>
             </div>
         </section>
+
+        <!-- Notificación flotante -->
+        <div id="notification" class="notification">
+            <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+            <span id="notificationMessage">Mensaje enviado</span>
+        </div>
     </main>
 
     <footer>
@@ -558,9 +587,91 @@
             <i class="fab fa-whatsapp"></i>
         </div>
         <p style="margin: 1.5rem 0 0.5rem; font-weight:300;">Bioreset Studio · Av. del Libertador 3899, CABA</p>
-        <p style="color: #38635a;">© 2025 · demo visual · todas las imágenes son de Unsplash</p>
+        <p style="color: #38635a;">© 2025 · todos los derechos reservados</p>
     </footer>
 
-    <!-- pequeñas animaciones extra al hacer scroll (solo con CSS class, ya está) -->
+    <script>
+        document.getElementById('turnoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const servicio = document.getElementById('servicio').value;
+            const fecha = document.getElementById('fecha').value;
+            const horario = document.getElementById('horario').value;
+            const notas = document.getElementById('notas').value.trim();
+
+            // Validar campos requeridos
+            if (!nombre || !email || !telefono || !servicio || !fecha || !horario) {
+                mostrarNotificacion('Por favor completá todos los campos requeridos', 'error');
+                return;
+            }
+
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                mostrarNotificacion('Por favor ingresá un email válido', 'error');
+                return;
+            }
+
+            // Formatear fecha
+            const fechaObj = new Date(fecha);
+            const fechaFormateada = fechaObj.toLocaleDateString('es-AR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+
+            // Crear mensaje para WhatsApp
+            const mensaje = `*Nuevo turno - Bioreset Studio*%0A%0A` +
+                           `*Nombre:* ${nombre}%0A` +
+                           `*Email:* ${email}%0A` +
+                           `*Teléfono:* ${telefono}%0A` +
+                           `*Servicio:* ${servicio}%0A` +
+                           `*Fecha:* ${fechaFormateada}%0A` +
+                           `*Horario:* ${horario} hs%0A` +
+                           (notas ? `*Notas:* ${notas}` : '');
+
+            // Número de WhatsApp (formato internacional sin +)
+            const numeroWhatsApp = '543517962251'; // 3517962251 con código de país
+
+            // Crear URL de WhatsApp
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+
+            // Abrir WhatsApp en una nueva pestaña
+            window.open(url, '_blank');
+
+            // Mostrar notificación de éxito
+            mostrarNotificacion('¡Turno solicitado! Serás redirigido a WhatsApp', 'exito');
+
+            // Limpiar el formulario (opcional)
+            // this.reset();
+        });
+
+        function mostrarNotificacion(mensaje, tipo) {
+            const notification = document.getElementById('notification');
+            const messageSpan = document.getElementById('notificationMessage');
+            
+            messageSpan.textContent = mensaje;
+            
+            if (tipo === 'error') {
+                notification.style.background = '#dc3545';
+            } else {
+                notification.style.background = '#2f5b54';
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+
+        // Establecer fecha mínima como hoy
+        const hoy = new Date().toISOString().split('T')[0];
+        document.getElementById('fecha').min = hoy;
+    </script>
 </body>
 </html>
